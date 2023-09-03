@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>POST Request Example</title>
+    <script src="balancesheet.js"></script>
+    <link rel="stylesheet" type="text/css" href="balancesheet.css">
+</head>
+<body>
+    <h1>Loan Application Form</h1>
+    
+    <!-- Form to collect user input -->
+    <form id="loanForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="money">Loan Amount:</label>
+        <input type="number" id="money" name="loanAmount" required><br><br>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+        
+        <label for="annualIncome">Total Annual Income</label>
+        <input type="number" id="annualIncome" name="annualIncome" required><br><br>
+        
+        <label for="yearOfEstablishment">Year Of Establishment</label>
+        <input type="date" id="yearOfEstablishment" name="yearOfEstablishment" required><br><br>
+        
+        <label for="totalCurrentAssets">Total Current Assets</label>
+        <input type="number" id="totalCurrentAssets" name="totalCurrentAssets" required><br><br>
+        
+        <label for="shareholderEquity">Shareholder Equity</label>
+        <input type="number" id="shareholderEquity" name="shareholderEquity" ><br><br>
+
+        <label for="dropdown1">Accounting Provider</label>
+        <select id="dropdown1" name="accountingProvider">
+            <option value="Xero">Xero</option>
+            <option value="MYOB">MYOB</option>
+        </select><br><br>
+        
+        <label for="dropdown2">Loan Reason</label>
+        <select id="dropdown2" name="loanReason">
+            <option value="Construction">Construction</option>
+            <option value="Refinancing">Refinancing</option>
+            <option value="Asset Purchase">Asset Purchase</option>
+        </select><br><br>
+        
+        <label for="dropdown3">Organisation</label>
+        <select id="dropdown3" name="organisation">
+            <option value="Sole Proprietor">Sole Proprietor</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Corporation">Corporation</option>
+        </select><br><br>
+        
+        <!-- List of BalanceSheetItems -->
+        <div id="balanceSheetItemsContainer">
+        <label>Balance Sheet Items:</label>
+            <!-- Initial control -->
+            <div class="balanceSheetItem">
+                <input type="number" name="balanceSheetItems[0].year" placeholder="Year">
+                <input type="number" name="balanceSheetItems[0].assetValue" placeholder="Asset Value">
+                <input type="number" name="balanceSheetItems[0].liabilitiesSum" placeholder="Liabilities Sum">
+            </div>
+            
+        </div>
+
+        <button type="button" onclick="addBalanceSheetItem()">Add Balance Sheet Item</button><br><br>
+        
+        <button type="button" onclick="postData()">Submit</button><br><br>
+        
+        <div id="response"></div><br><br>
+        
+        <button type="button" onclick="getBalanceSheet()">Get Balance Sheet</button><br><br>
+        
+        <div id="balanceSheetTableContainer"></div><br><br>
+        <div id="buttonContainer">
+          <!-- The "Get Assessment" button will be appended here -->
+        </div><br><br>
+        <p id="assessmentScore">Assessment Score: </p><br><br>
+        <div id="buttonContainer2">
+          <!-- The "Get Assessment" button will be appended here -->
+        </div><br><br>
+        <p id="approvedLoan">Approved Loan Amount: </p><br><br>
+
+
+
+    </form>
+    
+    <!-- Display the integer response here 
+    <div id="response"></div> -->
+
+
+</body>
+</html>
