@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
-@RequestMapping(
-        path = {"api/v1"}
-)
+@RequestMapping(path = "api/v1")
 public class AccountingController {
     private final AccountingService accountingService;
 
@@ -28,31 +26,23 @@ public class AccountingController {
         this.accountingService = accountingService;
     }
 
-    @PostMapping(
-            path = {"saveBusinessDetails"}
-    )
+    @PostMapping("saveBusinessDetails")
     public ResponseEntity<Long> addBusinessDetails(@RequestBody BusinessDetails businessDetails) {
         Long response = this.accountingService.addNewBusinessDetail(businessDetails);
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
-    @GetMapping(
-            path = {"{id}/balanceSheet"}
-    )
+    @GetMapping("{id}/balanceSheet")
     public BalanceSheet getBalanceSheet(@PathVariable("id") long businessId) {
         return this.accountingService.getBalanceSheet(businessId);
     }
 
-    @GetMapping(
-            path = {"{id}/assessment"}
-    )
+    @GetMapping("{id}/assessment")
     public int calculateAssessment(@PathVariable("id") long businessId) {
         return this.accountingService.calculateAssessment(businessId);
     }
 
-    @GetMapping(
-            path = {"{id}/result"}
-    )
+    @GetMapping("{id}/result")
     public double calculateGrantedLoanAmount(@PathVariable("id") long businessId, @RequestParam int preAssessment) {
         return this.accountingService.calculateGrantedLoanAmount(businessId, preAssessment);
     }

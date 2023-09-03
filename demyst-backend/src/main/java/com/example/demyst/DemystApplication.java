@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.example.demyst") //
+//@ComponentScan("com.example.demyst.repository.AccountingRepository")
 public class DemystApplication {
     public DemystApplication() {
     }
