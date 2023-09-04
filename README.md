@@ -1,11 +1,11 @@
-# Demyst :
+# Demyst:
 Assignment done for demyst screening.
 
-# Objective : Design a Loan Application system
+# Objective: Design a Loan Application system
 It takes Business Details information from User, and provide him with Balance Sheet. Further the user reviews the balance sheet and request for Loan Approval. Based on the rules mentioned in the coding assignment, 
 a preAssessment value is assigned which decides what percentage of the requested loan will be approved. 
 
-# Rules to be applied before sending to Decision Engine
+# Rules to be applied before sending to Decision Engine:
 If a business has made a profit in the last 12 months. The final value to be sent with a field "preAssessment": "60" which means the Loan is favored to be approved 60% of the requested value. If the average asset value across 12 months is greater than the loan amount then "preAssessment": "100"
 Default value to be used 20
 
@@ -16,6 +16,7 @@ Default value to be used 20
 # Technologies:
 Used HTML/CSS and JavaScript for Frontend development, that you can directly run with the main file index.html
 and Spring Boot for hosting backend server with REST API's.
+Postgres for database management
 
 
 # To run the java server:
